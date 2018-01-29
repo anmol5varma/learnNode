@@ -1,13 +1,14 @@
 const fs = require('fs');
 
-function ioA(filePath) {
+function ioA(filePath, callback = console.log) {
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      return console.error(err);
+      console.error(err);
+      return callback(false);
     }
 
     const ans = (data.toString().split('\n').length) - 1;
-    console.log(ans);
+    callback(ans);
     return ans;
   });
   // const file = fs.readFileSync(filePath);
