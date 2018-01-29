@@ -17,6 +17,7 @@ function similarFunctionality(filePath, callback = console.log) {
     console.error(err, '88888');
     return callback(false);
   }
+  return true;
 }
 //
 // const server = http.createServer((req, res) => {
